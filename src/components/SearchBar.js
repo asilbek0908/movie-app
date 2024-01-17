@@ -11,6 +11,10 @@ class SearchBar extends Component {
       this.props.searchMovies(this.state.search, this.state.type);
   };
 
+  handleSearchButtonClick = () => {
+    this.props.searchMovies(this.state.search, this.state.type);
+  };
+
   handleCategories = (e) => {
     this.setState(
       {
@@ -41,7 +45,11 @@ class SearchBar extends Component {
             }}
             onKeyUp={this.handleText}
           />
-          <a className="search-btn" href="#!">
+          <a
+            className="search-btn"
+            href="#!"
+            onClick={this.handleSearchButtonClick}
+          >
             <i className="fas fa-search"></i>
           </a>
         </div>
